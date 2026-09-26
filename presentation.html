@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UK Recruitment Compliance Processing</title>
+  <style>
+    :root {
+      --navy: #0f172a;
+      --blue: #1d4ed8;
+      --teal: #0f766e;
+      --orange: #f59e0b;
+      --red: #dc2626;
+      --green: #15803d;
+      --gray: #e5e7eb;
+      --light: #f8fafc;
+      --dark: #111827;
+      --text: #1f2937;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #f8fafc 40%, #fef3c7);
+      color: var(--text);
+    }
+
+    .slide {
+      width: 100%;
+      min-height: 100vh;
+      padding: 48px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 2px solid #cbd5e1;
+      page-break-after: always;
+    }
+
+    .title {
+      background: linear-gradient(135deg, var(--navy), #1e3a8a 55%, var(--blue));
+      color: white;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .title h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      margin: 0 0 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .title h2 {
+      font-size: 28px;
+      margin: 0;
+      opacity: 0.92;
+      font-weight: 500;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      opacity: 0.9;
+    }
+
+    h3 {
+      font-size: 36px;
+      margin: 0 0 24px;
+      color: var(--navy);
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .box {
+      background: white;
+      border-left: 8px solid var(--blue);
+      border-radius: 12px;
+      padding: 20px 22px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    .box.green { border-left-color: var(--green); }
+    .box.orange { border-left-color: var(--orange); }
+    .box.red { border-left-color: var(--red); }
+    .box.teal { border-left-color: var(--teal); }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 22px;
+      font-size: 21px;
+      line-height: 1.5;
+    }
+
+    li { margin: 8px 0; }
+
+    .highlight {
+      display: inline-block;
+      background: #dbeafe;
+      color: var(--navy);
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin: 6px 0 10px;
+      font-size: 14px;
+      letter-spacing: 0.4px;
+    }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li::before {
+      content: "✓ ";
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .step {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 14px 16px;
+      min-width: 170px;
+      font-weight: 700;
+      text-align: center;
+      flex: 1 1 190px;
+    }
+
+    .step.warn { background: #fff7ed; border-color: #fdba74; }
+    .step.bad { background: #fef2f2; border-color: #fca5a5; }
+    .step.good { background: #ecfdf5; border-color: #86efac; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 18px;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 14px;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--navy);
+      color: white;
+      font-size: 20px;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 14px;
+      color: #475569;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .note {
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: #7c2d12;
+      padding: 14px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      margin-top: 18px;
+    }
+
+    @media print {
+      .slide { min-height: auto; page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+  <section class="slide title">
+    <div class="subtitle">UK Recruitment Guide</div>
+    <h1>Compliance Processing</h1>
+    <h2>For Senior Recruitment Managers</h2>
+  </section>
+
+  <section class="slide">
+    <h3>1. Why Compliance Matters</h3>
+    <div class="two-col">
+      <div class="box">
+        <div class="highlight">Business Objective</div>
+        <ul>
+          <li>Protect the company from legal risk</li>
+          <li>Prevent fraud and misrepresentation</li>
+          <li>Safeguard vulnerable people and clients</li>
+          <li>Maintain a defensible recruitment process</li>
+          <li>Ensure the right person is hired for the right role</li>
+        </ul>
+      </div>
+      <div class="box green">
+        <div class="highlight">What Must Be Verified</div>
+        <ul>
+          <li>Identity verification</li>
+          <li>Right to Work + visa status</li>
+          <li>DBS + overseas police checks</li>
+          <li>Occupational Health clearance</li>
+          <li>References and gap checks</li>
+          <li>Professional registration</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">Result-oriented approach: compliance is a legal and operational safeguard.</div>
+  </section>
+
+  <section class="slide">
+    <h3>2. Identity Verification</h3>
+    <div class="two-col">
+      <div class="box">
+        <div class="highlight">Purpose</div>
+        <ul>
+          <li>Confirm identity is genuine</li>
+          <li>Prevent fraud or impersonation</li>
+          <li>Match candidate to official documents</li>
+        </ul>
+      </div>
+      <div class="box teal">
+        <div class="highlight">Examples of Acceptable Documents</div>
+        <ul>
+          <li>Passport</li>
+          <li>Driving licence + proof of address</li>
+          <li>Birth certificate + NI number</li>
+          <li>EU/EEA ID card</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="step good">Request original documents</div>
+      <div class="step good">Check validity and photo</div>
+      <div class="step good">Match DOB and name</div>
+      <div class="step good">Certify copy and file</div>
+      <div class="step good">Record verification</div>
+    </div>
+    <div class="note">Always verify originals in person where possible and keep a clear audit trail.</div>
+  </section>
+
+  <section class="slide">
+    <h3>3. Right to Work + Visa Sponsorship</h3>
+    <div class="box">
+      <div class="highlight">Key Rule</div>
+      <p>You must check a candidate's legal right to work in the UK before they start employment.</p>
+      <ul>
+        <li>British / EEA / Swiss citizen: usually straightforward</li>
+        <li>Non-EEA with valid visa: check expiry and restrictions</li>
+        <li>Non-EEA with no visa: sponsorship required</li>
+      </ul>
+    </div>
+    <div class="flow">
+      <div class="step good">Gather nationality and visa status</div>
+      <div class="step good">Review passport and visa details</div>
+      <div class="step warn">Check work restrictions</div>
+      <div class="step bad">No visa? Discuss sponsorship</div>
+    </div>
+    <div class="note">If sponsoring is required, the role cannot legally start until sponsorship is approved.</div>
+  </section>
+
+  <section class="slide">
+    <h3>4. DBS + Overseas Police Checks</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Level</th>
+          <th>Use Case</th>
+          <th>What It Covers</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Basic</td>
+          <td>General roles</td>
+          <td>Unspent convictions only</td>
+        </tr>
+        <tr>
+          <td>Standard</td>
+          <td>Regulatory or higher-trust roles</td>
+          <td>Spent + unspent convictions and cautions</td>
+        </tr>
+        <tr>
+          <td>Enhanced</td>
+          <td>Child or vulnerable adult roles</td>
+          <td>Full police record + local info</td>
+        </tr>
+        <tr>
+          <td>Enhanced + Barred List</td>
+          <td>Safeguarding jobs</td>
+          <td>Enhanced check + barred list review</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note">Overseas police checks are required when a candidate has lived or worked abroad for 6+ months within the relevant period.</div>
+  </section>
+
+  <section class="slide">
+    <h3>5. Occupational Health Clearance</h3>
+    <div class="two-col">
+      <div class="box orange">
+        <div class="highlight">Purpose</div>
+        <ul>
+          <li>Confirm fitness for the role</li>
+          <li>Protect employee wellbeing and safety</li>
+          <li>Identify reasonable adjustments</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="highlight">Important Principle</div>
+        <ul>
+          <li>Occupational Health should usually be post-offer</li>
+          <li>Do not ask inappropriate health questions at interview</li>
+          <li>Reasonable adjustments should be considered</li>
+        </ul>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="step good">Issue conditional offer</div>
+      <div class="step good">Send OH questionnaire</div>
+      <div class="step good">Review specialist report</div>
+      <div class="step good">Arrange adjustments if needed</div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h3>6. References and Employment Gap Checks</h3>
+    <div class="box">
+      <div class="highlight">Reference Rule</div>
+      <p>Always seek references from previous employers during the last 3 years and investigate any employment gaps.</p>
+    </div>
+    <ul>
+      <li>Prefer direct manager or senior referee</li>
+      <li>Verify dates, job title, and employment status</li>
+      <li>Ask about performance and reasons for leaving</li>
+      <li>Check if the reference says they would rehire</li>
+      <li>Investigate gaps with clear explanations</li>
+    </ul>
+    <div class="note">Unexplained gaps or conflicting dates are major red flags requiring further investigation.</div>
+  </section>
+
+  <section class="slide">
+    <h3>7. Professional Registration</h3>
+    <div class="box">
+      <div class="highlight">Why It Matters</div>
+      <ul>
+        <li>Required in regulated professions</li>
+        <li>Protects public safety</li>
+        <li>Ensures legal compliance</li>
+        <li>Prevents hiring unqualified workers</li>
+      </ul>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Profession</th>
+          <th>Typical Regulator</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Doctor</td><td>GMC</td></tr>
+        <tr><td>Nurse</td><td>NMC</td></tr>
+        <tr><td>Solicitor</td><td>Law Society</td></tr>
+        <tr><td>Teacher</td><td>TRA</td></tr>
+        <tr><td>Accountant</td><td>ICAEW / ACCA / ICAS</td></tr>
+      </tbody>
+    </table>
+    <div class="note">Never rely on a candidate's copy alone. Verify registration directly with the official regulator.</div>
+  </section>
+
+  <section class="slide">
+    <h3>8. Decision Flow: Compliance Checklist</h3>
+    <div class="flow">
+      <div class="step good">Identity Check</div>
+      <div class="step good">Right to Work</div>
+      <div class="step good">DBS / Police</div>
+      <div class="step good">OH Clearance</div>
+      <div class="step good">References</div>
+      <div class="step good">Professional Registration</div>
+    </div>
+    <div class="box red" style="margin-top:24px;">
+      <div class="highlight">Critical Rule</div>
+      <p>If any item is missing, unclear, or contradictory, do not shortcut the process. Investigate further and document the decision.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <h3>9. Key Takeaways for Senior Recruitment Managers</h3>
+    <ul class="checklist">
+      <li>Compliance is a legal and operational safeguard</li>
+      <li>Always verify identity and right to work before the start date</li>
+      <li>Different roles require different DBS and regulatory checks</li>
+      <li>Record all checks and keep secure audit trails</li>
+      <li>Investigate gaps, conflicting dates, and references carefully</li>
+      <li>Use reasonable adjustments rather than rejecting automatically</li>
+      <li>Professional registration must be verified directly and independently</li>
+      <li>Document decisions in case of later challenge or audit</li>
+    </ul>
+    <div class="note">Simple rule: if there is doubt, investigate, document, and escalate based on risk and policy.</div>
+  </section>
+
+  <section class="slide title">
+    <div class="subtitle">Action Plan</div>
+    <h1>Build a Strong Compliance Culture</h1>
+    <h2>Before hire | Before start date | Before audit</h2>
+  </section>
+</body>
+</html>
